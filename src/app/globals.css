@@ -161,28 +161,5 @@
 
   body {
     @apply bg-background text-foreground relative min-h-screen overflow-x-hidden;
-    /* Premium rich background with subtle radial gradient */
-    background: radial-gradient(circle at 50% 0%, oklch(0.97 0.01 247.858 / 0.8), transparent 70%),
-      radial-gradient(circle at 80% 10%, oklch(0.95 0.02 247.858 / 0.5), transparent 50%),
-      var(--background);
   }
-
-  .dark body {
-    /* Deep rich dark background */
-    background: radial-gradient(circle at 50% 0%, oklch(0.16 0.05 265.755), transparent 80%),
-      radial-gradient(circle at 85% 20%, oklch(0.15 0.06 260.031 / 0.8), transparent 60%),
-      var(--background);
-  }
-}
-
-@utility glass-panel {
-  @apply bg-white/70 backdrop-blur-md border border-white/50 shadow-lg dark:bg-slate-900/60 dark:border-white/10;
-}
-
-@utility glass-card {
-  @apply bg-white/60 backdrop-blur-sm border border-white/40 shadow-sm hover:shadow-md transition-all duration-300 dark:bg-slate-900/40 dark:border-white/5;
-}
-
-@utility rich-gradient-text {
-  @apply bg-clip-text text-transparent bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300;
 }

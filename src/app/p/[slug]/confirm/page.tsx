@@ -133,7 +133,7 @@ export default function ConfirmPage() {
 
   if (loading || !formData || !pageData) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
+      <div className="min-h-screen flex items-center justify-center">
         <div className="animate-pulse text-slate-500">読み込み中...</div>
       </div>
     );
@@ -142,23 +142,23 @@ export default function ConfirmPage() {
   return (
     <div className="min-h-screen pb-10">
       {/* ヘッダー */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-10">
-        <div className="max-w-2xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <Badge variant="secondary" className="mb-2">{pageData.group.name}</Badge>
-              <h1 className="text-xl font-bold text-slate-900">{pageData.plan.name}</h1>
+      <div className="bg-white border-b border-slate-200 sticky top-0 z-10">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+          <div className="flex items-center justify-between gap-3">
+            <div className="min-w-0">
+              <Badge variant="secondary" className="mb-1">{pageData.group.name}</Badge>
+              <h1 className="text-lg sm:text-xl font-bold text-slate-900 truncate">{pageData.plan.name}</h1>
             </div>
-            <div className="flex items-center gap-2 text-sm text-slate-500">
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500 text-white">
-                <Check className="w-4 h-4" />
+            <div className="flex items-center gap-1.5 shrink-0">
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-500 text-white">
+                <Check className="w-3.5 h-3.5" />
               </span>
-              <ChevronRight className="w-4 h-4" />
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-slate-900 text-white font-medium">2</span>
-              <ChevronRight className="w-4 h-4" />
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-slate-200 text-slate-400">3</span>
-              <ChevronRight className="w-4 h-4" />
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-slate-200 text-slate-400">4</span>
+              <ChevronRight className="w-3 h-3 text-slate-400 hidden sm:block" />
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-slate-900 text-white text-xs font-medium">2</span>
+              <ChevronRight className="w-3 h-3 text-slate-400 hidden sm:block" />
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-slate-200 text-slate-400 text-xs">3</span>
+              <ChevronRight className="w-3 h-3 text-slate-400 hidden sm:block" />
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-slate-200 text-slate-400 text-xs">4</span>
             </div>
           </div>
         </div>
@@ -167,7 +167,7 @@ export default function ConfirmPage() {
       {/* メインコンテンツ */}
       <main className="max-w-2xl mx-auto px-4 py-6 space-y-4">
         {/* 入力内容カード */}
-        <Card className="shadow-lg border-slate-200">
+        <Card className="border-slate-200 shadow-sm">
           <CardHeader className="pb-4">
             <CardTitle className="text-lg flex items-center gap-2">
               <User className="w-5 h-5 text-slate-600" />
@@ -178,14 +178,14 @@ export default function ConfirmPage() {
           <CardContent className="pt-6">
             <dl className="space-y-4">
               <div className="flex items-center gap-4">
-                <dt className="w-32 text-sm text-slate-500 flex items-center gap-2">
+                <dt className="w-24 sm:w-32 text-sm text-slate-500 flex items-center gap-2 shrink-0">
                   <User className="w-4 h-4" /> お名前
                 </dt>
                 <dd className="flex-1 font-medium">{formData.customer_name}</dd>
               </div>
               <Separator />
               <div className="flex items-center gap-4">
-                <dt className="w-32 text-sm text-slate-500 flex items-center gap-2">
+                <dt className="w-24 sm:w-32 text-sm text-slate-500 flex items-center gap-2 shrink-0">
                   <Mail className="w-4 h-4" /> メール
                 </dt>
                 <dd className="flex-1 break-all">{formData.customer_email}</dd>
@@ -194,7 +194,7 @@ export default function ConfirmPage() {
                 <>
                   <Separator />
                   <div className="flex items-center gap-4">
-                    <dt className="w-32 text-sm text-slate-500 flex items-center gap-2">
+                    <dt className="w-24 sm:w-32 text-sm text-slate-500 flex items-center gap-2 shrink-0">
                       <Phone className="w-4 h-4" /> 電話番号
                     </dt>
                     <dd className="flex-1">{formData.customer_phone}</dd>
@@ -203,14 +203,14 @@ export default function ConfirmPage() {
               )}
               <Separator />
               <div className="flex items-center gap-4">
-                <dt className="w-32 text-sm text-slate-500 flex items-center gap-2">
+                <dt className="w-24 sm:w-32 text-sm text-slate-500 flex items-center gap-2 shrink-0">
                   <Calendar className="w-4 h-4" /> 契約開始日
                 </dt>
                 <dd className="flex-1">{formatContractDate(formData.contract_start_date)}</dd>
               </div>
               <Separator />
               <div className="flex items-center gap-4">
-                <dt className="w-32 text-sm text-slate-500 flex items-center gap-2">
+                <dt className="w-24 sm:w-32 text-sm text-slate-500 flex items-center gap-2 shrink-0">
                   <Clock className="w-4 h-4" /> 回答期限
                 </dt>
                 <dd className="flex-1">
@@ -233,7 +233,7 @@ export default function ConfirmPage() {
         </Card>
 
         {/* 契約条件カード */}
-        <Card className="shadow-lg border-slate-200">
+        <Card className="border-slate-200 shadow-sm">
           <CardHeader className="pb-4">
             <CardTitle className="text-lg flex items-center gap-2">
               <FileText className="w-5 h-5 text-slate-600" />
@@ -266,7 +266,7 @@ export default function ConfirmPage() {
           <Button
             size="lg"
             onClick={handleNext}
-            className="flex-1 h-14 text-lg font-bold bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-700 hover:to-slate-800 shadow-lg"
+            className="flex-1 h-14 text-lg font-bold"
           >
             確認事項へ進む
             <ChevronRight className="w-5 h-5 ml-2" />

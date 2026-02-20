@@ -120,7 +120,7 @@ export default function CustomerInputPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
+      <div className="min-h-screen flex items-center justify-center">
         <div className="animate-pulse text-slate-500">読み込み中...</div>
       </div>
     );
@@ -128,7 +128,7 @@ export default function CustomerInputPage() {
 
   if (error || !pageData) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
+      <div className="min-h-screen flex items-center justify-center">
         <p className="text-red-600">{error || 'エラーが発生しました'}</p>
       </div>
     );
@@ -137,21 +137,21 @@ export default function CustomerInputPage() {
   return (
     <div className="min-h-screen pb-10">
       {/* ヘッダー */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-10">
-        <div className="max-w-2xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <Badge variant="secondary" className="mb-2">{pageData.group.name}</Badge>
-              <h1 className="text-xl font-bold text-slate-900">{pageData.plan.name}</h1>
+      <div className="bg-white border-b border-slate-200 sticky top-0 z-10">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+          <div className="flex items-center justify-between gap-3">
+            <div className="min-w-0">
+              <Badge variant="secondary" className="mb-1">{pageData.group.name}</Badge>
+              <h1 className="text-lg sm:text-xl font-bold text-slate-900 truncate">{pageData.plan.name}</h1>
             </div>
-            <div className="flex items-center gap-2 text-sm text-slate-500">
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-slate-900 text-white font-medium">1</span>
-              <ChevronRight className="w-4 h-4" />
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-slate-200 text-slate-400">2</span>
-              <ChevronRight className="w-4 h-4" />
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-slate-200 text-slate-400">3</span>
-              <ChevronRight className="w-4 h-4" />
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-slate-200 text-slate-400">4</span>
+            <div className="flex items-center gap-1.5 shrink-0">
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-slate-900 text-white text-xs font-medium">1</span>
+              <ChevronRight className="w-3 h-3 text-slate-400 hidden sm:block" />
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-slate-200 text-slate-400 text-xs">2</span>
+              <ChevronRight className="w-3 h-3 text-slate-400 hidden sm:block" />
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-slate-200 text-slate-400 text-xs">3</span>
+              <ChevronRight className="w-3 h-3 text-slate-400 hidden sm:block" />
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-slate-200 text-slate-400 text-xs">4</span>
             </div>
           </div>
         </div>
@@ -159,7 +159,7 @@ export default function CustomerInputPage() {
 
       {/* メインコンテンツ */}
       <main className="max-w-2xl mx-auto px-4 py-6">
-        <Card className="shadow-lg border-slate-200">
+        <Card className="border-slate-200 shadow-sm">
           <CardHeader className="pb-4">
             <CardTitle className="text-2xl">お客様情報の入力</CardTitle>
             <CardDescription className="text-base">
@@ -261,7 +261,7 @@ export default function CustomerInputPage() {
                 <Button
                   type="submit"
                   size="lg"
-                  className="w-full h-14 text-lg font-bold bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-700 hover:to-slate-800 shadow-lg"
+                  className="w-full h-14 text-lg font-bold"
                 >
                   次へ進む
                   <ChevronRight className="w-5 h-5 ml-2" />

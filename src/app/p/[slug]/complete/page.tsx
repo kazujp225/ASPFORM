@@ -64,7 +64,7 @@ export default function CompletePage() {
 
   if (!result) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
+      <div className="min-h-screen flex items-center justify-center">
         <div className="animate-pulse text-slate-500">読み込み中...</div>
       </div>
     );
@@ -73,27 +73,27 @@ export default function CompletePage() {
   return (
     <div className="min-h-screen pb-10">
       {/* ヘッダー */}
-      <div className="bg-white/80 backdrop-blur-sm border-b border-slate-200 sticky top-0 z-10">
-        <div className="max-w-2xl mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <div>
-              <Badge variant="secondary" className="mb-2 bg-emerald-100 text-emerald-700">同意完了</Badge>
-              <h1 className="text-xl font-bold text-slate-900">メールを送信してください</h1>
+      <div className="bg-white border-b border-slate-200 sticky top-0 z-10">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
+          <div className="flex items-center justify-between gap-3">
+            <div className="min-w-0">
+              <Badge variant="secondary" className="mb-1 bg-emerald-100 text-emerald-700">同意完了</Badge>
+              <h1 className="text-lg sm:text-xl font-bold text-slate-900 truncate">メールを送信してください</h1>
             </div>
-            <div className="flex items-center gap-2 text-sm text-slate-500">
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500 text-white">
-                <Check className="w-4 h-4" />
+            <div className="flex items-center gap-1.5 shrink-0">
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-500 text-white">
+                <Check className="w-3.5 h-3.5" />
               </span>
-              <ChevronRight className="w-4 h-4" />
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500 text-white">
-                <Check className="w-4 h-4" />
+              <ChevronRight className="w-3 h-3 text-slate-400 hidden sm:block" />
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-500 text-white">
+                <Check className="w-3.5 h-3.5" />
               </span>
-              <ChevronRight className="w-4 h-4" />
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-emerald-500 text-white">
-                <Check className="w-4 h-4" />
+              <ChevronRight className="w-3 h-3 text-slate-400 hidden sm:block" />
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-emerald-500 text-white">
+                <Check className="w-3.5 h-3.5" />
               </span>
-              <ChevronRight className="w-4 h-4" />
-              <span className="flex items-center justify-center w-8 h-8 rounded-full bg-slate-900 text-white font-medium">4</span>
+              <ChevronRight className="w-3 h-3 text-slate-400 hidden sm:block" />
+              <span className="flex items-center justify-center w-7 h-7 rounded-full bg-slate-900 text-white text-xs font-medium">4</span>
             </div>
           </div>
         </div>
@@ -103,7 +103,7 @@ export default function CompletePage() {
       <main className="max-w-2xl mx-auto px-4 py-6 space-y-4">
         {/* 成功メッセージ */}
         <div className="text-center py-8">
-          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-gradient-to-br from-emerald-400 to-emerald-600 shadow-lg mb-6">
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-emerald-600 mb-6">
             <CheckCircle2 className="w-10 h-10 text-white" />
           </div>
           <h2 className="text-2xl font-bold text-slate-900 mb-3">あと少しで完了です</h2>
@@ -114,7 +114,7 @@ export default function CompletePage() {
         </div>
 
         {/* メール送信カード */}
-        <Card className="shadow-lg border-emerald-200 bg-gradient-to-br from-white to-emerald-50/50">
+        <Card className="border-emerald-200">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
               <Mail className="w-5 h-5 text-emerald-600" />
@@ -128,7 +128,7 @@ export default function CompletePage() {
             <Button
               size="lg"
               onClick={handleOpenMail}
-              className="w-full h-16 text-xl font-bold bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-500 hover:to-emerald-600 shadow-lg"
+              className="w-full h-16 text-xl font-bold bg-emerald-600 hover:bg-emerald-700 text-white"
             >
               <Mail className="w-6 h-6 mr-3" />
               メールアプリを開く
@@ -141,7 +141,7 @@ export default function CompletePage() {
 
         {/* フォールバック */}
         <Collapsible open={showFallback} onOpenChange={setShowFallback}>
-          <Card className="shadow-md border-slate-200">
+          <Card className="border-slate-200 shadow-sm">
             <CollapsibleTrigger asChild>
               <CardHeader className="cursor-pointer hover:bg-slate-50 transition-colors">
                 <CardTitle className="text-base flex items-center justify-between">

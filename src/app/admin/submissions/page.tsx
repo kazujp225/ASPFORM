@@ -31,8 +31,8 @@ export default async function SubmissionsPage() {
       <h1 className="text-2xl font-bold text-slate-900">同意履歴</h1>
 
       <Card>
-        <CardContent className="p-0">
-          <Table>
+        <CardContent className="p-0 overflow-x-auto">
+          <Table className="min-w-[800px]">
             <TableHeader>
               <TableRow>
                 <TableHead className="text-base">日時</TableHead>
