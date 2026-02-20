@@ -9,8 +9,8 @@ import { Label } from '@/components/ui/label';
 
 export default function LoginPage() {
   const router = useRouter();
-  const [username, setUsername] = useState('admin');
-  const [password, setPassword] = useState('password123');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
 
@@ -58,10 +58,10 @@ export default function LoginPage() {
             )}
 
             <div className="space-y-2">
-              <Label htmlFor="username" className="text-base">ユーザー名</Label>
+              <Label htmlFor="username" className="text-base">メールアドレス</Label>
               <Input
                 id="username"
-                type="text"
+                type="email"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 className="text-base"

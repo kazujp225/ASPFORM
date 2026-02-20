@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
 
     if (!username || !password) {
       return NextResponse.json(
-        { error: 'ユーザー名とパスワードを入力してください' },
+        { error: 'メールアドレスとパスワードを入力してください' },
         { status: 400 }
       );
     }
@@ -16,7 +16,7 @@ export async function POST(request: NextRequest) {
 
     if (!valid) {
       return NextResponse.json(
-        { error: 'ユーザー名またはパスワードが正しくありません' },
+        { error: 'メールアドレスまたはパスワードが正しくありません' },
         { status: 401 }
       );
     }
